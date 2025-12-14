@@ -1,0 +1,127 @@
+import { Link, useLocation } from "wouter";
+import { cn } from "@/lib/utils";
+import { Menu, X, Shield } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+
+export function Layout({ children }: { children: React.ReactNode }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [location] = useLocation();
+
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/strategies", label: "Our Strategies" },
+    { href: "/about", label: "About Us" },
+    { href: "/resources", label: "Resources" },
+    { href: "/contact", label: "Get Involved" },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col bg-background font-sans">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+          <Link href="/">
+            <a className="flex items-center gap-2 font-serif font-bold text-xl text-primary hover:opacity-80 transition-opacity">
+              <Shield className="h-6 w-6 fill-primary text-primary" />
+              <span>SALT MN</span>
+            </a>
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-6">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href}>
+                <a
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-primary",
+                    location === item.href
+                      ? "text-primary font-bold"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {item.label}
+                </a>
+              </Link>
+            ))}
+            <Link href="/resources">
+              <Button size="sm" variant="destructive" className="font-bold">
+                Rapid Response
+              </Button>
+            </Link>
+          </nav>
+
+          {/* Mobile Nav Toggle */}
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Nav Content */}
+        {isOpen && (
+          <div className="md:hidden border-t bg-background p-4 space-y-4 animate-in slide-in-from-top-2">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href}>
+                <a
+                  className="block text-sm font-medium py-2 hover:text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </a>
+              </Link>
+            ))}
+            <Link href="/resources">
+              <Button className="w-full" variant="destructive">
+                Rapid Response
+              </Button>
+            </Link>
+          </div>
+        )}
+      </header>
+
+      <main className="flex-1">
+        {children}
+      </main>
+
+      <footer className="bg-primary text-primary-foreground py-12 mt-12">
+        <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="font-serif text-xl font-bold mb-4 flex items-center gap-2">
+              <Shield className="h-5 w-5" />
+              Somali American Leadership Table
+            </h3>
+            <p className="text-sm text-primary-foreground/80 leading-relaxed max-w-xs">
+              Building power, protecting our community, and shaping the future of Somali Americans in Minnesota.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-bold mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-sm text-primary-foreground/80">
+              <li><Link href="/strategies">Our 8 Strategies</Link></li>
+              <li><Link href="/resources">Know Your Rights</Link></li>
+              <li><Link href="/about">Governance Structure</Link></li>
+              <li><Link href="/contact">Volunteer</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold mb-4">Emergency Contact</h4>
+            <p className="text-sm text-primary-foreground/80 mb-2">
+              If you witness ICE activity:
+            </p>
+            <div className="bg-destructive/10 border border-destructive/20 p-4 rounded text-center">
+              <p className="font-bold text-lg text-white">Call the Hotline</p>
+              <p className="text-2xl font-mono mt-1">1-800-XXX-XXXX</p>
+              <p className="text-xs mt-2 opacity-70">(Mock Number)</p>
+            </div>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 mt-12 pt-8 border-t border-primary-foreground/10 text-center text-xs text-primary-foreground/60">
+          © 2025 Somali American Leadership Table. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  );
+}
