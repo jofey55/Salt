@@ -24,11 +24,13 @@ export function Hero() {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight tracking-tight">
-            Protecting Our Community, <span className="text-blue-200">Building Our Power</span>
+            SALT: <span className="text-blue-200">Stronger Than ICE</span>
           </h1>
           
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-xl leading-relaxed">
-            The Somali American Leadership Table (SALT) is Minnesota's central coordinating body for community defense, legal protection, and long-term advocacy.
+            Solidarity • Advocacy • Legal Support
+            <br className="my-2"/>
+            Minnesota's central coordinating body for community defense, legal protection, and long-term advocacy.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">

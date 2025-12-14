@@ -1,8 +1,9 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import saltLogo from "@assets/IMG_20251214_132732_1765747694479.png";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,8 +11,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/strategies", label: "Our Strategies" },
-    { href: "/about", label: "About Us" },
+    { href: "/strategies", label: "Strategies" },
+    { href: "/about", label: "About" },
     { href: "/resources", label: "Resources" },
     { href: "/contact", label: "Get Involved" },
   ];
@@ -19,11 +20,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <Link href="/">
-            <a className="flex items-center gap-2 font-serif font-bold text-xl text-primary hover:opacity-80 transition-opacity">
-              <Shield className="h-6 w-6 fill-primary text-primary" />
-              <span>SALT MN</span>
+            <a className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+              <img src={saltLogo} alt="SALT Logo" className="h-12 w-auto rounded-md" />
+              <div className="flex flex-col">
+                <span className="font-serif font-black text-2xl tracking-tighter leading-none text-primary">SALT</span>
+                <span className="text-[0.65rem] font-bold tracking-widest text-primary/80 uppercase">Stronger Than ICE</span>
+              </div>
             </a>
           </Link>
 
@@ -89,10 +93,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <footer className="bg-primary text-primary-foreground py-12 mt-12">
         <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-serif text-xl font-bold mb-4 flex items-center gap-2">
-              <Shield className="h-5 w-5" />
-              Somali American Leadership Table
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+               <img src={saltLogo} alt="SALT Logo" className="h-10 w-auto bg-white/10 rounded p-1" />
+               <div>
+                 <h3 className="font-serif text-xl font-bold leading-none">SALT</h3>
+                 <p className="text-[0.6rem] tracking-wider opacity-80 uppercase">Solidarity • Advocacy • Legal Support</p>
+               </div>
+            </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed max-w-xs">
               Building power, protecting our community, and shaping the future of Somali Americans in Minnesota.
             </p>
