@@ -1,0 +1,105 @@
+
+    at async plugins (/Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/lib/plugin.js:38:17)
+    at async LazyResult.runAsync (/Users/sali/Downloads/MN-Immigrant-Aid/node_modules/postcss/lib/lazy-result.js:293:11)
+    at async compileCSS (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+    at async Object.transform (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+    at async transform (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/node-entry.js:21201:16)
+sali@Yusufs-MacBook-Air client % clear
+
+sali@Yusufs-MacBook-Air client % cd ~/Downloads/MN-Immigrant-Aid/client
+
+sali@Yusufs-MacBook-Air client % pwd
+
+/Users/sali/Downloads/MN-Immigrant-Aid/client
+sali@Yusufs-MacBook-Air client % cd ~/Downloads/MN-Immigrant-Aid
+
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % cd client
+npx vite build
+
+vite v5.4.21 building for production...
+transforming (3) src/main.tsx
+warn - The `content` option in your Tailwind CSS configuration is missing or empty.
+warn - Configure your content sources or your generated CSS will be missing styles.
+warn - https://tailwindcss.com/docs/content-configuration
+✓ 3 modules transformed.
+x Build failed in 999ms
+error during build:
+[vite:css] [postcss] /Users/sali/Downloads/MN-Immigrant-Aid/client/src/index.css:1:1: The `bg-background` class does not exist. If `bg-background` is a custom class, make sure it is defined within a `@layer` directive.
+file: /Users/sali/Downloads/MN-Immigrant-Aid/client/src/index.css:1:0
+    at Input.error (/Users/sali/Downloads/MN-Immigrant-Aid/node_modules/postcss/lib/input.js:135:16)
+    at AtRule.error (/Users/sali/Downloads/MN-Immigrant-Aid/node_modules/postcss/lib/node.js:146:32)
+    at processApply (/Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:380:29)
+    at /Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:551:9
+    at /Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/lib/processTailwindFeatures.js:55:50
+    at async plugins (/Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/lib/plugin.js:38:17)
+    at async LazyResult.runAsync (/Users/sali/Downloads/MN-Immigrant-Aid/node_modules/postcss/lib/lazy-result.js:293:11)
+    at async compileCSS (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+    at async Object.transform (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+    at async transform (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/node-entry.js:21201:16)
+sali@Yusufs-MacBook-Air client % cd ~/Downloads/MN-Immigrant-Aid/client
+
+sali@Yusufs-MacBook-Air client % cat <<EOF > ../tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: ["class"],
+  content: [
+    "./client/index.html",
+    "./client/src/**/*.{ts,tsx}"
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        border: "hsl(var(--border))"
+      }
+    }
+  },
+  plugins: []
+}
+EOF
+
+sali@Yusufs-MacBook-Air client % cat <<EOF > src/index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 20% 98%;
+  --foreground: 222 47% 11%;
+  --border: 214.3 31.8% 91.4%;
+}
+
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+}
+
+@layer base {
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+EOF
+
+sali@Yusufs-MacBook-Air client % rm -rf dist
+
+sali@Yusufs-MacBook-Air client % npx vite build
+
+vite v5.4.21 building for production...
+✓ 4 modules transformed.
+x Build failed in 262ms
+error during build:
+[vite]: Rollup failed to resolve import "@/components/ui/toaster" from "/Users/sali/Downloads/MN-Immigrant-Aid/client/src/App.tsx".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rollupOptions.external`
+    at viteWarn (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65855:17)
+    at onRollupWarning (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65887:5)
+    at onwarn (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65550:7)
+    at file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/node-entry.js:21013:13
+    at Object.logger [as onLog] (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/node-entry.js:22886:9)
+    at ModuleLoader.handleInvalidResolvedId (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/node-entry.js:21630:26)
+    at file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/node-entry.js:21588:26
+sali@Yusufs-MacBook-Air client % 
