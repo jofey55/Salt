@@ -18,8 +18,10 @@ export default function Resources() {
             <Button size="lg" variant="secondary" className="gap-2 font-bold text-destructive">
               <Download className="w-4 h-4" /> Download Wallet Pass
             </Button>
-            <Button size="lg" variant="outline" className="gap-2 border-white/40 hover:bg-white/10 text-white">
-              <Phone className="w-4 h-4" /> Save Hotline Number
+            <Button size="lg" variant="outline" className="gap-2 border-white/40 hover:bg-white/10 text-white" asChild>
+              <a href="tel:6197200084">
+                <Phone className="w-4 h-4" /> Call 619-720-0084
+              </a>
             </Button>
           </div>
         </div>
@@ -70,21 +72,15 @@ export default function Resources() {
         {/* Resources Grid */}
         <div className="mt-20">
           <h2 className="text-2xl font-serif font-bold text-primary mb-8 text-center">Community Resources</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="bg-blue-50 border-blue-100">
-               <CardContent className="pt-6">
-                 <Shield className="w-8 h-8 text-blue-600 mb-4" />
-                 <h3 className="font-bold text-lg mb-2">Legal Defense Fund</h3>
-                 <p className="text-sm text-muted-foreground mb-4">Financial support for legal representation in immigration cases.</p>
-                 <Button variant="link" className="p-0 h-auto text-blue-700">Access Fund &rarr;</Button>
-               </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Card className="bg-emerald-50 border-emerald-100">
                <CardContent className="pt-6">
                  <MessageSquare className="w-8 h-8 text-emerald-600 mb-4" />
                  <h3 className="font-bold text-lg mb-2">WhatsApp Alerts</h3>
                  <p className="text-sm text-muted-foreground mb-4">Join the verified community alert channel for real-time updates.</p>
-                 <Button variant="link" className="p-0 h-auto text-emerald-700">Join Channel &rarr;</Button>
+                 <Button variant="link" className="p-0 h-auto text-emerald-700" asChild>
+                   <a href="https://chat.whatsapp.com/DCkKgQ1frZNGTRYznYB4Jk" target="_blank" rel="noopener noreferrer">Join Channel &rarr;</a>
+                 </Button>
                </CardContent>
             </Card>
             <Card className="bg-amber-50 border-amber-100">

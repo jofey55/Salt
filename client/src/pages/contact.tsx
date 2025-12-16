@@ -118,7 +118,6 @@ export default function Contact() {
                         <SelectItem value="rapid-response">Rapid Response (Driver/Observer)</SelectItem>
                         <SelectItem value="media">Media & Storytelling</SelectItem>
                         <SelectItem value="logistics">Logistics & Events</SelectItem>
-                        <SelectItem value="fundraising">Fundraising</SelectItem>
                         <SelectItem value="general">General Support</SelectItem>
                       </SelectContent>
                     </Select>

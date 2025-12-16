@@ -24,11 +24,11 @@ export function Hero() {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight tracking-tight">
-            SALT: <span className="text-blue-200">Stronger Than ICE</span>
+            SALT: <span className="text-blue-200 block md:inline text-3xl md:text-5xl mt-2 md:mt-0">Somali American Legal Taskforce <span className="text-2xl md:text-4xl opacity-90">Against ICE</span></span>
           </h1>
           
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-xl leading-relaxed">
-            Solidarity • Advocacy • Legal Support
+            Solidarity • Advocacy
             <br className="my-2"/>
             Minnesota's central coordinating body for community defense, legal protection, and long-term advocacy.
           </p>
@@ -60,15 +60,6 @@ export function Hero() {
                 <div>
                   <h4 className="font-bold group-hover:text-blue-200 transition-colors">Report a Raid</h4>
                   <p className="text-sm opacity-70">Immediate steps if you see ICE.</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors cursor-pointer group">
-                <div className="bg-blue-500/20 p-2 rounded-full">
-                  <ArrowRight className="w-5 h-5 text-blue-200" />
-                </div>
-                <div>
-                  <h4 className="font-bold group-hover:text-blue-200 transition-colors">Legal Support</h4>
-                  <p className="text-sm opacity-70">Find pro-bono attorneys.</p>
                 </div>
               </li>
             </ul>

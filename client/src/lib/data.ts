@@ -24,7 +24,6 @@ export const strategies = [
     description: "Legal defense, safety, and protection from ICE & profiling.",
     icon: "ShieldAlert",
     tactics: [
-      "Legal Fund",
       "Partnerships with immigration lawyers",
       "Community legal clinics",
       "Rapid legal screenings",
@@ -106,23 +105,6 @@ export const strategies = [
       "Policy researchers",
       "Advocacy team volunteers",
       "Voter mobilizers"
-    ]
-  },
-  {
-    id: 7,
-    title: "Fundraising & Resource Mobilization",
-    description: "Sustain all operations financially and materially.",
-    icon: "HeartHandshake",
-    tactics: [
-      "Fundraising campaigns",
-      "Mosque collections",
-      "Donor outreach",
-      "Events & community galas"
-    ],
-    roles: [
-      "Donor outreach team",
-      "Event planners",
-      "Grant writers"
     ]
   },
   {

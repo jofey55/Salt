@@ -26,7 +26,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <img src={saltLogo} alt="SALT Logo" className="h-12 w-auto rounded-md" />
               <div className="flex flex-col">
                 <span className="font-serif font-black text-2xl tracking-tighter leading-none text-primary">SALT</span>
-                <span className="text-[0.65rem] font-bold tracking-widest text-primary/80 uppercase">Stronger Than ICE</span>
+                <span className="text-[0.65rem] font-bold tracking-widest text-primary/80 uppercase">
+                  Somali American Legal Taskforce <span className="text-[0.55rem]">Against ICE</span>
+                </span>
               </div>
             </a>
           </Link>
@@ -97,7 +99,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                <img src={saltLogo} alt="SALT Logo" className="h-10 w-auto bg-white/10 rounded p-1" />
                <div>
                  <h3 className="font-serif text-xl font-bold leading-none">SALT</h3>
-                 <p className="text-[0.6rem] tracking-wider opacity-80 uppercase">Solidarity • Advocacy • Legal Support</p>
+                 <p className="text-[0.6rem] tracking-wider opacity-80 uppercase">
+                   Somali American Legal Taskforce <span className="text-[0.5rem]">Against ICE</span>
+                 </p>
                </div>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed max-w-xs">
@@ -120,8 +124,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </p>
             <div className="bg-destructive/10 border border-destructive/20 p-4 rounded text-center">
               <p className="font-bold text-lg text-white">Call the Hotline</p>
-              <p className="text-2xl font-mono mt-1">1-800-XXX-XXXX</p>
-              <p className="text-xs mt-2 opacity-70">(Mock Number)</p>
+              <a href="tel:6197200084" className="text-2xl font-mono mt-1 hover:underline block">619-720-0084</a>
             </div>
           </div>
         </div>

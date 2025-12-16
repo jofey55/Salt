@@ -6,7 +6,7 @@ export function RapidResponseAlert() {
       <div className="container mx-auto flex items-center justify-center gap-3 text-sm font-medium text-center">
         <AlertCircle className="w-5 h-5 shrink-0 animate-pulse" />
         <p>
-          Need urgent legal help? Call the Rapid Response Hotline: <span className="font-bold underline">1-800-XXX-XXXX</span>
+          Need urgent legal help? Call the Rapid Response Hotline: <a href="tel:6197200084" className="font-bold underline hover:text-white">619-720-0084</a>
         </p>
       </div>
     </div>
