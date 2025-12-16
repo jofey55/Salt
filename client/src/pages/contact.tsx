@@ -31,27 +31,28 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    
-    // Construct email body
-    const subject = `SALT Volunteer: ${values.role} - ${values.name}`;
-    const body = `Name: ${values.name}
-Email: ${values.email}
-Phone: ${values.phone}
-Role: ${values.role}
-Message: ${values.message || "No additional message"}
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const res = await fetch("/api/volunteer-submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
 
-Sent from SALT Website`;
+      if (!res.ok) throw new Error("Failed to submit");
 
-    // Open mail client
-    window.location.href = `mailto:salttheice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    toast({
-      title: "Opening Email Client...",
-      description: "Please send the pre-filled email to complete your registration.",
-    });
-    form.reset();
+      toast({
+        title: "Registration Submitted",
+        description: "Thank you for volunteering! We'll contact you soon at " + values.email,
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or contact us at 619-720-0084",
+        variant: "destructive",
+      });
+    }
   }
 
   return (
