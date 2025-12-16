@@ -1,0 +1,45 @@
+35 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % nano postcss.config.js
+
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % nano client/src/index.css
+
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % rm -rf dist
+
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % npm run build
+
+
+> mn-immigrant-aid@1.0.0 build
+> tsx script/build.ts
+
+building client...
+vite v7.1.12 building for production...
+✓ 3 modules transformed.
+✗ Build failed in 165ms
+[@tailwindcss/vite:generate:build] Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+file: /Users/sali/Downloads/MN-Immigrant-Aid/client/src/index.css
+    at onInvalidCandidate (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:21:1314)
+    at Ae (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:16:36337)
+    at file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:21:355
+    at hr (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:3:1718)
+    at I (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:3:1377)
+    at xe (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:21:172)
+    at zi (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:38:294)
+    at async Ba (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:38:631)
+    at async Hu (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:38:1406)
+    at nu (/Users/sali/Downloads/MN-Immigrant-Aid/node_modules/@tailwindcss/node/dist/index.mjs:10:3433) {
+  code: 'PLUGIN_ERROR',
+  plugin: '@tailwindcss/vite:generate:build',
+  hook: 'transform',
+  id: '/Users/sali/Downloads/MN-Immigrant-Aid/client/src/index.css',
+  watchFiles: [
+    '/Users/sali/Downloads/MN-Immigrant-Aid/client/index.html',
+    '/Users/sali/Downloads/MN-Immigrant-Aid/client/src/main.tsx',
+    '/Users/sali/Downloads/MN-Immigrant-Aid/package.json',
+    '/Users/sali/Downloads/MN-Immigrant-Aid/node_modules/react/jsx-runtime.js',
+    '/Users/sali/Downloads/MN-Immigrant-Aid/node_modules/react-dom/client.js',
+    '/Users/sali/Downloads/MN-Immigrant-Aid/client/src/index.css'
+  ]
+}
