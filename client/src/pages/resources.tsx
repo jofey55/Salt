@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Download, Shield, Phone, MessageSquare } from "lucide-react";
-import kyrImage from "@assets/IMG_20251213_202742_1765689144753.jpg";
+import kyrImage from "@assets/kyrpass_cropped.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 
@@ -17,8 +17,8 @@ export default function Resources() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" variant="outline" className="gap-2 border-white/40 hover:bg-white/10 text-white" asChild>
-              <a href="tel:6197200084">
-                <Phone className="w-4 h-4" /> Call 619-720-0084
+              <a href="tel:6124492341">
+                <Phone className="w-4 h-4" /> Call 612-449-2341
               </a>
             </Button>
           </div>

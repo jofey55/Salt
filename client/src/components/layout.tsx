@@ -128,7 +128,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </p>
             <div className="bg-destructive/10 border border-destructive/20 p-4 rounded text-center">
               <p className="font-bold text-lg text-white">Call the Hotline</p>
-              <a href="tel:6197200084" className="text-2xl font-mono mt-1 hover:underline block">619-720-0084</a>
+              <a href="tel:6124492341" className="text-2xl font-mono mt-1 hover:underline block">612-449-2341</a>
             </div>
           </div>
         </div>

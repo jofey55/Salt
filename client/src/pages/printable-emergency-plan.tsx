@@ -18,7 +18,7 @@ export default function PrintableEmergencyPlan() {
         <div className="grid grid-cols-2 gap-8 mb-8">
            <div className="border border-black p-4 bg-gray-50">
              <h3 className="font-bold text-lg mb-2">SALT Hotline (24/7)</h3>
-             <p className="text-3xl font-mono font-bold">619-720-0084</p>
+             <p className="text-3xl font-mono font-bold">612-449-2341</p>
              <p className="text-sm mt-1">Call immediately if you see ICE or are detained.</p>
            </div>
            <div className="border border-black p-4">

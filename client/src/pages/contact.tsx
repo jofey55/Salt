@@ -49,7 +49,7 @@ export default function Contact() {
     } catch (error) {
       toast({
         title: "Submission Failed",
-        description: "Please try again or contact us at 619-720-0084",
+        description: "Please try again or contact us at 612-449-2341",
         variant: "destructive",
       });
     }
