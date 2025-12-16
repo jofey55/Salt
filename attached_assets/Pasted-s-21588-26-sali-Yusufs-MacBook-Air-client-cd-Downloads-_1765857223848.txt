@@ -1,0 +1,77 @@
+s:21588:26
+sali@Yusufs-MacBook-Air client % cd ~/Downloads/MN-Immigrant-Aid
+
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % cat <<EOF > vite.config.ts
+import { defineConfig } from "vite"
+import react from "@vitejs/plugin-react"
+import path from "path"
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "client/src")
+    }
+  },
+  build: {
+    outDir: "client/dist",
+    emptyOutDir: true
+  }
+})
+EOF
+
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % rm -rf client/dist
+
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % cd client
+npx vite build
+
+vite v5.4.21 building for production...
+transforming (1) index.html
+warn - The `content` option in your Tailwind CSS configuration is missing or empty.
+warn - Configure your content sources or your generated CSS will be missing styles.
+warn - https://tailwindcss.com/docs/content-configuration
+✓ 5 modules transformed.
+x Build failed in 344ms
+error during build:
+[vite]: Rollup failed to resolve import "@/components/ui/toaster" from "/Users/sali/Downloads/MN-Immigrant-Aid/client/src/App.tsx".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rollupOptions.external`
+    at viteWarn (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65855:17)
+    at onRollupWarning (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65887:5)
+    at onwarn (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65550:7)
+    at file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/node-entry.js:21013:13
+    at Object.logger [as onLog] (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/node-entry.js:22886:9)
+    at ModuleLoader.handleInvalidResolvedId (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/node-entry.js:21630:26)
+    at file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/node-entry.js:21588:26
+sali@Yusufs-MacBook-Air client % cd ~/Downloads/MN-Immigrant-Aid
+
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % pwd
+# must be: /Users/sali/Downloads/MN-Immigrant-Aid
+
+/Users/sali/Downloads/MN-Immigrant-Aid
+zsh: command not found: #
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % cd ~/Downloads/MN-Immigrant-Aid
+pwd
+
+/Users/sali/Downloads/MN-Immigrant-Aid
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % ls client/src/components/ui | grep toaster
+
+toaster.tsx
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % grep "@\"" vite.config.ts
+
+      "@": path.resolve(__dirname, "client/src")
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % cd ~/Downloads/MN-Immigrant-Aid
+
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % NODE_ENV=production npx vite build --mode production
+
+vite v5.4.21 building for production...
+✓ 0 modules transformed.
+x Build failed in 5ms
+error during build:
+Could not resolve entry module "index.html".
+    at getRollupError (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/parseAst.js:401:41)
+    at error (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/parseAst.js:397:42)
+    at ModuleLoader.loadEntryModule (file:///Users/sali/Downloads/MN-Immigrant-Aid/node_modules/rollup/dist/es/shared/node-entry.js:21649:20)
+    at async Promise.all (index 0)
+sali@Yusufs-MacBook-Air MN-Immigrant-Aid % 
