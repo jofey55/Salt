@@ -9,6 +9,7 @@ import Strategies from "@/pages/strategies";
 import About from "@/pages/about";
 import Resources from "@/pages/resources";
 import Contact from "@/pages/contact";
+import PrintableEmergencyPlan from "@/pages/printable-emergency-plan";
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/strategies" component={Strategies} />
       <Route path="/about" component={About} />
       <Route path="/resources" component={Resources} />
+      <Route path="/resources/emergency-plan" component={PrintableEmergencyPlan} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>

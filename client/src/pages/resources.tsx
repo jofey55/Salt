@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Download, Shield, Phone, MessageSquare } from "lucide-react";
 import kyrImage from "@assets/IMG_20251213_202742_1765689144753.jpg";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "wouter";
 
 export default function Resources() {
   return (
@@ -15,9 +16,15 @@ export default function Resources() {
             You have constitutional rights regardless of your immigration status. Be prepared.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" variant="secondary" className="gap-2 font-bold text-destructive">
-              <Download className="w-4 h-4" /> Download Wallet Pass
-            </Button>
+            <a 
+              href={kyrImage} 
+              download="SALT-Know-Your-Rights-Pass.jpg"
+              className="inline-flex"
+            >
+              <Button size="lg" variant="secondary" className="gap-2 font-bold text-destructive w-full sm:w-auto">
+                <Download className="w-4 h-4" /> Download Wallet Pass
+              </Button>
+            </a>
             <Button size="lg" variant="outline" className="gap-2 border-white/40 hover:bg-white/10 text-white" asChild>
               <a href="tel:6197200084">
                 <Phone className="w-4 h-4" /> Call 619-720-0084
@@ -88,7 +95,9 @@ export default function Resources() {
                  <Phone className="w-8 h-8 text-amber-600 mb-4" />
                  <h3 className="font-bold text-lg mb-2">Emergency Plan</h3>
                  <p className="text-sm text-muted-foreground mb-4">Download the family preparedness checklist.</p>
-                 <Button variant="link" className="p-0 h-auto text-amber-700">Download PDF &rarr;</Button>
+                 <Link href="/resources/emergency-plan">
+                   <Button variant="link" className="p-0 h-auto text-amber-700">View Checklist &rarr;</Button>
+                 </Link>
                </CardContent>
             </Card>
           </div>
