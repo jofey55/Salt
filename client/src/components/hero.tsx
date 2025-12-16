@@ -24,8 +24,8 @@ export function Hero() {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight tracking-tight">
-            SALT: <span className="text-blue-200 block md:inline text-3xl md:text-5xl mt-2 md:mt-0">Somali Americans Legal Taskforce</span>
-            <span className="block text-destructive text-3xl md:text-5xl mt-2 font-black">Against ICE</span>
+            SALT: <span className="text-blue-200 block md:inline text-3xl md:text-5xl mt-2 md:mt-0">SOMALI AMERICANS LEGAL TASKFORCE</span>
+            <span className="block text-destructive text-3xl md:text-5xl mt-2 font-black">AGAINST ICE</span>
           </h1>
           
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-xl leading-relaxed">

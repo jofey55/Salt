@@ -27,7 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <div className="flex flex-col">
                 <span className="font-serif font-black text-2xl tracking-tighter leading-none text-primary">SALT</span>
                 <span className="text-[0.65rem] font-bold tracking-widest text-primary/80 uppercase">
-                  Somali Americans Legal Taskforce
+                  SOMALI AMERICANS LEGAL TASKFORCE
                 </span>
                 <span className="text-[0.6rem] font-black tracking-widest text-destructive uppercase leading-none mt-0.5">
                   Against ICE
@@ -103,7 +103,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                <div>
                  <h3 className="font-serif text-xl font-bold leading-none">SALT</h3>
                  <p className="text-[0.6rem] tracking-wider opacity-80 uppercase block">
-                   Somali Americans Legal Taskforce
+                   SOMALI AMERICANS LEGAL TASKFORCE
                  </p>
                  <p className="text-[0.55rem] font-bold tracking-wider text-red-300 uppercase block mt-0.5">
                    Against ICE

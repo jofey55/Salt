@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import partnerLogos from "@assets/IMG_20251213_202744_1765689144733.png";
-import whatsappQr from "@assets/1000073020_1765851557136.jpg";
+import QRCode from "react-qr-code";
 import { RaidAlertBoard } from "@/components/raid-alert-board";
 
 export default function Home() {
@@ -23,7 +23,14 @@ export default function Home() {
             {/* WhatsApp Column */}
             <div className="lg:col-span-1 bg-emerald-50 border border-emerald-100 rounded-2xl p-8 text-center">
               <div className="bg-white p-4 rounded-xl shadow-sm inline-block mb-6">
-                <img src={whatsappQr} alt="Join WhatsApp Group" className="w-48 h-48 object-cover" />
+                <div style={{ height: "auto", margin: "0 auto", maxWidth: 192, width: "100%" }}>
+                  <QRCode
+                    size={256}
+                    style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                    value="https://chat.whatsapp.com/DCkKgQ1frZNGTRYznYB4Jk"
+                    viewBox={`0 0 256 256`}
+                  />
+                </div>
               </div>
               <h3 className="text-2xl font-bold text-emerald-900 mb-2">Join the Alert Network</h3>
               <p className="text-emerald-800/80 mb-6">
@@ -89,7 +96,7 @@ export default function Home() {
                 <strong className="text-foreground">Our Vision:</strong> We envision a Minnesota where the Somali American community is safe, united, respected, and powerful—able to protect its families, shape its own narrative, and lead with dignity.
               </p>
               <p>
-                <strong className="text-foreground">Our Mission:</strong> The Somali American Leadership Taskforce builds resources, sets strategy, and creates the connections required to protect our community and advance our collective power.
+                <strong className="text-foreground">Our Mission:</strong> The SOMALI AMERICANS LEGAL TASKFORCE builds resources, sets strategy, and creates the connections required to protect our community and advance our collective power.
               </p>
             </div>
             <div className="mt-8">
