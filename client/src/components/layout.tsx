@@ -21,40 +21,38 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex flex-col bg-background font-sans">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-          <Link href="/">
-            <a className="flex items-center gap-3 hover:opacity-90 transition-opacity">
-              <img src={saltLogo} alt="SALT Logo" className="h-12 w-auto rounded-md" />
-              <div className="flex flex-col">
-                <span className="font-serif font-black text-2xl tracking-tighter leading-none text-primary">SALT</span>
-                <span className="text-[0.65rem] font-bold tracking-widest text-primary/80 uppercase">
-                  SOMALI AMERICANS LEGAL TASKFORCE
-                </span>
-                <span className="text-[0.6rem] font-black tracking-widest text-destructive uppercase leading-none mt-0.5">
-                  Against ICE
-                </span>
-              </div>
-            </a>
+          <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+            <img src={saltLogo} alt="SALT Logo" className="h-12 w-auto rounded-md" />
+            <div className="flex flex-col">
+              <span className="font-serif font-black text-2xl tracking-tighter leading-none text-primary">SALT</span>
+              <span className="text-[0.65rem] font-bold tracking-widest text-primary/80 uppercase">
+                SOMALI AMERICANS LEGAL TASKFORCE
+              </span>
+              <span className="text-[0.6rem] font-black tracking-widest text-destructive uppercase leading-none mt-0.5">
+                Against ICE
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <a
-                  className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary",
-                    location === item.href
-                      ? "text-primary font-bold"
-                      : "text-muted-foreground"
-                  )}
-                >
-                  {item.label}
-                </a>
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary",
+                  location === item.href
+                    ? "text-primary font-bold"
+                    : "text-muted-foreground"
+                )}
+              >
+                {item.label}
               </Link>
             ))}
             <Link href="/resources">
-              <Button size="sm" variant="destructive" className="font-bold">
-                Rapid Response
+              <Button size="sm" variant="destructive" className="font-bold" asChild>
+                <span>Rapid Response</span>
               </Button>
             </Link>
           </nav>
@@ -73,18 +71,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {isOpen && (
           <div className="md:hidden border-t bg-background p-4 space-y-4 animate-in slide-in-from-top-2">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <a
-                  className="block text-sm font-medium py-2 hover:text-primary"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </a>
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block text-sm font-medium py-2 hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
               </Link>
             ))}
             <Link href="/resources">
-              <Button className="w-full" variant="destructive">
-                Rapid Response
+              <Button className="w-full" variant="destructive" asChild>
+                <span>Rapid Response</span>
               </Button>
             </Link>
           </div>
