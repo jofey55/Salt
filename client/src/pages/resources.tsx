@@ -16,15 +16,6 @@ export default function Resources() {
             You have constitutional rights regardless of your immigration status. Be prepared.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
-              href={kyrImage} 
-              download="SALT-Know-Your-Rights-Pass.jpg"
-              className="inline-flex"
-            >
-              <Button size="lg" variant="secondary" className="gap-2 font-bold text-destructive w-full sm:w-auto">
-                <Download className="w-4 h-4" /> Download Wallet Pass
-              </Button>
-            </a>
             <Button size="lg" variant="outline" className="gap-2 border-white/40 hover:bg-white/10 text-white" asChild>
               <a href="tel:6197200084">
                 <Phone className="w-4 h-4" /> Call 619-720-0084
@@ -67,6 +58,27 @@ export default function Resources() {
                   <p className="text-muted-foreground">Call the community hotline to activate rapid response support.</p>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-8 border-t pt-8">
+               <h3 className="font-bold text-xl mb-4">Additional Rights & Resources</h3>
+               <ul className="space-y-3">
+                 <li>
+                   <a href="https://www.ilcm.org/immigration-resources/know-your-rights/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-2">
+                     <Shield className="w-4 h-4" /> Immigrant Law Center of MN Factsheets
+                   </a>
+                 </li>
+                 <li>
+                   <a href="https://www.aclu-mn.org/en/issues/immigrants-rights" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-2">
+                     <Shield className="w-4 h-4" /> ACLU Minnesota - Know Your Rights
+                   </a>
+                 </li>
+                 <li>
+                   <a href="https://www.vlnmn.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-2">
+                     <Shield className="w-4 h-4" /> Volunteer Lawyers Network
+                   </a>
+                 </li>
+               </ul>
             </div>
           </div>
           <div className="flex justify-center">

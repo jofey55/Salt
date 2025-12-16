@@ -33,9 +33,23 @@ export default function Contact() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    
+    // Construct email body
+    const subject = `SALT Volunteer: ${values.role} - ${values.name}`;
+    const body = `Name: ${values.name}
+Email: ${values.email}
+Phone: ${values.phone}
+Role: ${values.role}
+Message: ${values.message || "No additional message"}
+
+Sent from SALT Website`;
+
+    // Open mail client
+    window.location.href = `mailto:salttheice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     toast({
-      title: "Thank you for volunteering!",
-      description: "A coordinator will contact you shortly.",
+      title: "Opening Email Client...",
+      description: "Please send the pre-filled email to complete your registration.",
     });
     form.reset();
   }
